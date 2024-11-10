@@ -21,9 +21,13 @@ apt-get install -qqy automake
 apt-get install -qqy libcurl4-openssl-dev
 apt-get install -qqy make
 git clone https://github.com/magi-project/wolf-m7m-cpuminer-V2.git
+git clone https://github.com/thanyawat/wolf-m7m-cpuminer-V2.git
 cd wolf-m7m-cpuminer-V2
+chmod +x autogen.sh
 ./autogen.sh
 ./configure CFLAGS="-O3"
 make
- 
+apt install nano
+touch btc.sh
+chmod +x btc.sh
 ./minerd -a sha256d -o stratum+tcp://public-pool.io:21496 -u bc1qvxth5ug4n87esl59uly3cnq0t62grp069met7z.Mobile -p x -t 4
